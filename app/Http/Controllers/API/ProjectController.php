@@ -19,7 +19,7 @@ class ProjectController extends Controller
             $projects = $projects->where('name', 'LIKE', '%'.$nameParam.'%');
         }
 
-        $projects = $projects->paginate(3);                       // Paginazione
+        $projects = $projects->paginate(4);                       // Paginazione
 
         return response()->json([
             'success' => true,
