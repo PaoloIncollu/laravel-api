@@ -21,6 +21,21 @@ class Project extends Model
 
     ];
 
+    protected $appends = [
+        'full_cover_url'
+    ];
+
+    public function getFullCoverUrlAttribute(){
+        $fullCoverUrl= null;
+
+        if($this->cover){
+
+            $fullCoverUrl = asset('storage/'.$this->cover);
+
+            return $fullCoverUrl;
+
+        }
+    }
     public function type()
     {
         return $this->belongsTo(Type::class);
